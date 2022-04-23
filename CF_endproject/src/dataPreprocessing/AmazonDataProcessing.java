@@ -570,7 +570,7 @@ public class AmazonDataProcessing {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         List<String> lines = amazonFileExtraction.extractRawDataAsList();
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        Set<String> stopWords = IOUTils.readFile2Set("/Users/atul/Desktop/CF/Project_End/CARP/");
+        Set<String> stopWords = IOUTils.readFile2Set("/Users/atul/Desktop/CF/Project_End/CARP/dataPreprocessing/stopwords.txt");
         lines = amazonFileExtraction.cleanReviewData(lines, stopWords);
         IOUTils.writeFile(lines, amazonFileExtraction.path_prefix + "CleanVersion.out");
 
