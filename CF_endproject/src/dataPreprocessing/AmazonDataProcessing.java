@@ -27,7 +27,7 @@ import org.json.JSONObject;
 
 public class AmazonDataProcessing {
 	
-    public static final String PATH = "/Users/atul/Desktop/CF/Project_End/CARP/dataPreprocessing/reviews_Musical_Instruments_5.json";
+    public static final String PATH = "/Users/atul/Desktop/CF/CF_Project/CARP/dataPreprocessing/reviews_Digital_Music_5.json";
     public static final String[] SEPARATOR = new String[]{"\t", "\\*", " "};
     public String path_prefix;
     public static final String[] KEYS = new String[]{"reviewerID", "asin", "reviewText", "overall", "unixReviewTime"};
@@ -566,11 +566,12 @@ public class AmazonDataProcessing {
     public static void main(String[] args) throws IOException {
     	
     	System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        AmazonDataProcessing amazonFileExtraction = new AmazonDataProcessing("/Users/atul/Desktop/CF/Project_End/CARP/dataPreprocessing");
+        AmazonDataProcessing amazonFileExtraction = new AmazonDataProcessing("/Users/atul/Desktop/CF/CF_Project/CARP/dataPreprocessing/Digital_Music/dataPreprocessing");
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         List<String> lines = amazonFileExtraction.extractRawDataAsList();
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        Set<String> stopWords = IOUTils.readFile2Set("/Users/atul/Desktop/CF/Project_End/CARP/dataPreprocessing/stopwords.txt");
+        Set<String> stopWords = IOUTils.readFile2Set("/Users/atul/Desktop/CF/CF_Project/CARP/dataPreprocessing/stopwords.txt");
+        System.out.println(stopWords.size());
         lines = amazonFileExtraction.cleanReviewData(lines, stopWords);
         IOUTils.writeFile(lines, amazonFileExtraction.path_prefix + "CleanVersion.out");
 
@@ -615,5 +616,6 @@ public class AmazonDataProcessing {
         Map<String, Integer> word2IdMap = amazonFileExtraction.wordStatics(SEPARATOR[0], user2Reviews);
         System.out.println(word2IdMap.size());
         IOUTils.writeStr2IntMap2File(amazonFileExtraction.path_prefix + "WordDict.out", word2IdMap);
+        System.out.println("done");
     }
 }
