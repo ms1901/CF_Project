@@ -1,0 +1,94 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 4 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: DeepCoNN_raw.py
+--------------------------------------------------------------------------------
+DeepCoNN_raw.py:18:33: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+DeepCoNN_raw.py:25:33: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+DeepCoNN_raw.py:88:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+DeepCoNN_raw.py:95:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'DeepCoNN_raw.py'
+ outputting to 'DeepCoNN.py'
+--------------------------------------------------------------------------------
+
+5:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+6:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+7:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+8:25: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+9:25: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+10:33: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+14:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+14:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+16:16: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+18:33: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+18:33: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+21:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+21:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+23:16: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+25:33: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+25:33: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+31:17: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+31:17: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+34:32: INFO: Renamed 'tf.truncated_normal' to 'tf.random.truncated_normal'
+36:23: INFO: Added keywords to args of function 'tf.nn.conv2d'
+36:23: INFO: Renamed keyword argument for tf.nn.conv2d from filter to filters
+45:25: INFO: Added keywords to args of function 'tf.nn.max_pool'
+45:25: INFO: Renamed keyword argument for tf.nn.max_pool from value to input
+45:25: INFO: Renamed 'tf.nn.max_pool' to 'tf.nn.max_pool2d'
+59:17: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+59:17: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+62:32: INFO: Renamed 'tf.truncated_normal' to 'tf.random.truncated_normal'
+64:23: INFO: Added keywords to args of function 'tf.nn.conv2d'
+64:23: INFO: Renamed keyword argument for tf.nn.conv2d from filter to filters
+73:25: INFO: Added keywords to args of function 'tf.nn.max_pool'
+73:25: INFO: Renamed keyword argument for tf.nn.max_pool from value to input
+73:25: INFO: Renamed 'tf.nn.max_pool' to 'tf.nn.max_pool2d'
+84:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+84:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+85:28: INFO: Changing keep_prob arg of tf.nn.dropout to rate, and recomputing value.
+
+86:27: INFO: Changing keep_prob arg of tf.nn.dropout to rate, and recomputing value.
+
+87:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+87:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+88:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+88:17: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+91:28: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+95:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+95:17: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+98:28: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+104:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+104:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+110:20: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+112:16: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+120:18: INFO: Changing keep_prob arg of tf.nn.dropout to rate, and recomputing value.
+
+122:18: INFO: Added keywords to args of function 'tf.reduce_sum'
+122:18: INFO: Renamed keyword argument for tf.reduce_sum from keep_dims to keepdims
+130:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+130:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+136:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+136:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+137:23: INFO: Added keywords to args of function 'tf.reduce_mean'
+138:35: INFO: Added keywords to args of function 'tf.reduce_mean'
+--------------------------------------------------------------------------------
+
