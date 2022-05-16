@@ -1,2 +1,2 @@
-# CF_Project
-## CARL is a Context-Aware User-Item Representation Learning model for item recommendation.
+# Collaborative Filtering
+## An impementation of "A Context-Aware User-Item Representation Learning for Item Recommendationg".
